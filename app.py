@@ -48,6 +48,6 @@ with col2:
         st.download_button(
             "Download pickle",
             data=st.session_state["pickle_data"],
-            file_name="user_input",
+            file_name=user_input,
             mime="application/octet-stream",
         )
