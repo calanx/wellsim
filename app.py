@@ -51,7 +51,7 @@ with col2:
         )
 
 with col3:
-    user_input_date2 = st.text_input("Input_date",value=date)
+    user_input_date2 = st.text_input("Input_date")
     
     if st.button("GO"):
         
