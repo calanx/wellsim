@@ -17,13 +17,15 @@ col1, col2 = st.columns(2)
 date = datetime.date.today().strftime("%Y-%m-%d")
 
 with col1:
-    if st.button("GO Today"):
+    if st.button("GO"):
         
-        params = {"playableStatus": 0, "raceNo": 0, "order": 1, "isOnlyMemberCoupon": "false", "pageNumber": 1, "pageSize": 1, "date": date}
+        params = {"playableStatus": 0, "raceNo": 0, "order": 1, "isOnlyMemberCoupon": "false", "pageNumber": 1, "pageSize": 1, "date": str(user_input_date)}
     
         data = requests.get(url, params=params, headers=headers).json()
         for h in data["d"]["hippodromes"]:
             st.write(f'{h["programId"]} - {h["name"]}')
+
+ 
 
 
 with col2:
