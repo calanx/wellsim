@@ -12,7 +12,7 @@ url = "https://tjkbulten.atyarisi.com/api/v7/GetPremadeSharedCoupon"
 st.title("Hello World!")
 
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 date = datetime.date.today().strftime("%Y-%m-%d")
 
