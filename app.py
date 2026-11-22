@@ -28,7 +28,7 @@ with col1:
 
 with col2:
     user_input = st.text_input("Input")
-    user_input_date = st.text_input("Input_date: 2026-11-23")
+    user_input_date = st.text_input("Input_date",value="2026-11-23")
     
     if st.button("Create pickle"):
        
