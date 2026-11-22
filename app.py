@@ -51,9 +51,11 @@ with col2:
         )
 
 with col3:
+    user_input_date2 = st.text_input("Input_date",value=date)
+    
     if st.button("GO"):
         
-        params = {"playableStatus": 0, "raceNo": 0, "order": 1, "isOnlyMemberCoupon": "false", "pageNumber": 1, "pageSize": 1, "date": str(user_input_date)}
+        params = {"playableStatus": 0, "raceNo": 0, "order": 1, "isOnlyMemberCoupon": "false", "pageNumber": 1, "pageSize": 1, "date": str(user_input_date2)}
     
         data = requests.get(url, params=params, headers=headers).json()
         for h in data["d"]["hippodromes"]:
