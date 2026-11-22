@@ -28,15 +28,14 @@ with col1:
 
 with col2:
     user_input = st.text_input("Input")
+    user_input_date = st.text_input("Input_date: 2026-11-23")
+    
     if st.button("Create pickle"):
-        # Replace this with your function and its result.
        
-        
-
          params = {
              "playableStatus": 0, "raceNo": 0, "order": 1,
              "isOnlyMemberCoupon": "false", "programId": user_input,
-             "pageNumber": 1, "pageSize": 999, "date": date
+             "pageNumber": 1, "pageSize": 999, "date": user_input_date
          }
          data = requests.get(url, params=params, headers=headers).json()
          
