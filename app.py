@@ -35,7 +35,7 @@ with col2:
          params = {
              "playableStatus": 0, "raceNo": 0, "order": 1,
              "isOnlyMemberCoupon": "false", "programId": user_input,
-             "pageNumber": 1, "pageSize": 999, "date": user_input_date
+             "pageNumber": 1, "pageSize": 999, "date": str(user_input_date)
          }
          data = requests.get(url, params=params, headers=headers).json()
          
