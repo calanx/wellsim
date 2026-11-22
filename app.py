@@ -12,7 +12,7 @@ url = "https://tjkbulten.atyarisi.com/api/v7/GetPremadeSharedCoupon"
 st.title("Hello World!")
 
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 date = datetime.date.today().strftime("%Y-%m-%d")
 
@@ -49,14 +49,3 @@ with col2:
             file_name=user_input,
             mime="application/octet-stream",
         )
-
-with col3:
-    user_input_date2 = st.text_input("Input_date")
-    
-    if st.button("GO"):
-        
-        params = {"playableStatus": 0, "raceNo": 0, "order": 1, "isOnlyMemberCoupon": "false", "pageNumber": 1, "pageSize": 1, "date": str(user_input_date2)}
-    
-        data = requests.get(url, params=params, headers=headers).json()
-        for h in data["d"]["hippodromes"]:
-            st.write(f'{h["programId"]} - {h["name"]}')
